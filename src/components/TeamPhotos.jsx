@@ -3,6 +3,11 @@ import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Mail, Globe, Award, Users, Target } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 
+import FounderImage from '../assets/images/Founder.jpeg';
+import MarionImage from '../assets/images/Marion.jpg';
+import CaroliImage from '../assets/images/caroli.jpg';
+import FridahImage from '../assets/images/fridah.jpg';
+
 // Destructure specific motion components
 const MotionDiv = motion.div;
 
@@ -12,7 +17,7 @@ const TeamPhotos = () => {
       name: 'Ekisa Joseph Opurong\'o',
       role: 'Founder & CEO',
       description: 'Passionate about applying AI and data to solve real-world agricultural challenges with 4+ years in tech innovation.',
-      image: 'src/assets/images/Founder.jpeg',
+      image: FounderImage,
       social: {
         linkedin: 'www.linkedin.com/in/ekisa-joseph-opurongo',
         twitter: '#',
@@ -26,7 +31,7 @@ const TeamPhotos = () => {
       name: 'Marion Jebet',
       role: 'CTO & Co-founder',
       description: 'BSc Information Technology | Leading tech innovation and system architecture for AgroShield360 with backend expertise.',
-      image: 'src/assets/images/Marion.jpg',
+      image: MarionImage,
       social: {
         linkedin: '#',
         twitter: '#',
@@ -40,7 +45,7 @@ const TeamPhotos = () => {
       name: 'Caroli Ikileng',
       role: 'COO & Co-founder',
       description: 'BSc Hotel & Hospitality Management | Expert in market strategy, operations, and customer relationship management.',
-      image: 'src/assets/images/caroli.jpg',
+      image: CaroliImage,
       social: {
         linkedin: '#',
         twitter: '#',
@@ -54,7 +59,7 @@ const TeamPhotos = () => {
       name: 'Fridah Nkatha',
       role: 'CPO & Co-founder',
       description: 'BSc Project Planning & Management | Strategic planning, project execution, and product development specialist.',
-      image: 'src/assets/images/fridah.jpg',
+      image: FridahImage,
       social: {
         linkedin: '#',
         twitter: '#',

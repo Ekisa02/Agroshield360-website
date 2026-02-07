@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Leaf, Download, Phone, ChevronRight } from "lucide-react";
+import LogoImage from '../assets/images/logo.jpeg';
 
 const { div: MotionDiv, a: MotionA } = motion;
 
@@ -118,7 +119,7 @@ const Navigation = () => {
           >
             <div className="logo-icon">
               <img
-                src="/src/assets/images/logo.jpeg"
+                src={LogoImage}
                 alt="AgroShield360 Logo"
                 className="custom-logo"
               />
@@ -205,7 +206,7 @@ const Navigation = () => {
               <div className="mobile-header">
                 <div className="mobile-logo">
                   <img
-                    src="/src/assets/images/logo.jpeg"
+                    src={LogoImage}
                     alt="AgroShield360 Logo"
                     className="mobile-custom-logo"
                   />
