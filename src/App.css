@@ -1,0 +1,54 @@
+/* src/App.css */
+.App {
+  text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+    padding: 0 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem !important;
+    padding: 0 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .navbar {
+    padding: 1rem !important;
+  }
+  
+  .logo {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
