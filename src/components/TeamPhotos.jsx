@@ -1,58 +1,68 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Linkedin, Twitter, Mail, Globe, Award, Users, Target } from 'lucide-react';
+import { fadeInUp, staggerContainer } from '../utils/animations';
 
 // Destructure specific motion components
-const { div: MotionDiv } = motion;
-
-import { Linkedin, Twitter, Mail } from 'lucide-react';
-import { fadeInUp, staggerContainer } from '../utils/animations';
+const MotionDiv = motion.div;
 
 const TeamPhotos = () => {
   const teamMembers = [
     {
       name: 'Ekisa Joseph Opurong\'o',
       role: 'Founder & CEO',
-      description: 'Passionate about applying AI and data to solve real-world agricultural challenges.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+      description: 'Passionate about applying AI and data to solve real-world agricultural challenges with 4+ years in tech innovation.',
+      image: 'src/assets/images/Founder.jpeg',
       social: {
-        linkedin: '#',
+        linkedin: 'www.linkedin.com/in/ekisa-joseph-opurongo',
         twitter: '#',
         email: 'josephekisaopurongo@gmail.com'
       },
-      featured: true
+      expertise: ['AI & Machine Learning', 'Agricultural Technology', 'Social Entrepreneurship'],
+      isFounder: true,
+      achievements: ['4th Year IT Student', 'University Innovation Leader']
     },
     {
       name: 'Marion Jebet',
-      role: 'Technology & Systems',
-      description: 'BSc Information Technology | Leading tech innovation and system architecture.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face',
+      role: 'CTO & Co-founder',
+      description: 'BSc Information Technology | Leading tech innovation and system architecture for AgroShield360 with backend expertise.',
+      image: 'src/assets/images/Marion.jpg',
       social: {
         linkedin: '#',
         twitter: '#',
-        email: '#'
-      }
+        email: 'Marionjebet886@gmail.com'
+      },
+      expertise: ['Software Development', 'System Architecture', 'AI Integration'],
+      isCoFounder: true,
+      achievements: ['4th Year IT Student', 'Quality Assurance Lead']
     },
     {
-      name: 'Caroli Ikiling',
-      role: 'Market & Operations',
-      description: 'BSc Hotel & Hospitality Management | Expert in market strategy and operations.',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
+      name: 'Caroli Ikileng',
+      role: 'COO & Co-founder',
+      description: 'BSc Hotel & Hospitality Management | Expert in market strategy, operations, and customer relationship management.',
+      image: 'src/assets/images/caroli.jpg',
       social: {
         linkedin: '#',
         twitter: '#',
-        email: '#'
-      }
+        email: 'ikilengcaroli@gmail.com'
+      },
+      expertise: ['Operations Management', 'Market Strategy', 'Customer Relations'],
+      isCoFounder: true,
+      achievements: ['4th Year Hospitality', 'Business Development']
     },
     {
       name: 'Fridah Nkatha',
-      role: 'Planning & Strategy',
-      description: 'BSc Project Planning & Management | Strategic planning and project execution.',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
+      role: 'CPO & Co-founder',
+      description: 'BSc Project Planning & Management | Strategic planning, project execution, and product development specialist.',
+      image: 'src/assets/images/fridah.jpg',
       social: {
         linkedin: '#',
         twitter: '#',
-        email: '#'
-      }
+        email: 'Frinkatha38@gmail.com'
+      },
+      expertise: ['Project Management', 'Strategic Planning', 'Product Development'],
+      isCoFounder: true,
+      achievements: ['3rd Year Management', 'Project Coordinator']
     }
   ];
 
@@ -67,7 +77,7 @@ const TeamPhotos = () => {
         >
           <h2 className="section-title">Meet the Visionaries</h2>
           <p className="section-subtitle">
-            A passionate team dedicated to transforming agriculture in Africa
+            A passionate team dedicated to transforming agriculture in Africa through innovation
           </p>
         </MotionDiv>
 
@@ -81,9 +91,13 @@ const TeamPhotos = () => {
           {teamMembers.map((member, index) => (
             <MotionDiv 
               key={index} 
-              className={`team-card-photo ${member.featured ? 'featured' : ''}`}
+              className="team-card-photo"
               variants={fadeInUp}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              whileHover={{ 
+                y: -8, 
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                transition: { duration: 0.3 } 
+              }}
             >
               <div className="team-image-container">
                 <img 
@@ -92,39 +106,56 @@ const TeamPhotos = () => {
                   className="team-image"
                   loading="lazy"
                 />
-                {member.featured && (
-                  <div className="featured-badge">
-                    <span>Founder & CEO</span>
-                  </div>
-                )}
                 <div className="team-image-overlay">
                   <div className="social-links">
-                    <a href={member.social.linkedin} className="social-link">
+                    <a href={member.social.linkedin} className="social-link" aria-label="LinkedIn">
                       <Linkedin size={18} />
                     </a>
-                    <a href={member.social.twitter} className="social-link">
+                    <a href={member.social.twitter} className="social-link" aria-label="Twitter">
                       <Twitter size={18} />
                     </a>
-                    <a href={`mailto:${member.social.email}`} className="social-link">
+                    <a href={`mailto:${member.social.email}`} className="social-link" aria-label="Email">
                       <Mail size={18} />
                     </a>
                   </div>
                 </div>
+                
+                {/* Role Badge */}
+                <div className={`role-badge ${member.isFounder ? 'founder' : 'cofounder'}`}>
+                  <span>{member.isFounder ? 'Founder' : 'Co-founder'}</span>
+                </div>
+                
+                {/* Achievement Indicators */}
+                <div className="achievement-indicators">
+                  <span className="achievement-dot"></span>
+                  <span className="achievement-dot"></span>
+                  <span className="achievement-dot"></span>
+                </div>
               </div>
               
               <div className="team-content">
-                <h3 className="team-name">{member.name}</h3>
-                <p className="team-role">{member.role}</p>
+                <div className="team-header">
+                  <h3 className="team-name">{member.name}</h3>
+                  <p className="team-role">{member.role}</p>
+                </div>
+                
                 <p className="team-description">{member.description}</p>
                 
+                {/* Achievements */}
+                <div className="team-achievements">
+                  {member.achievements.map((achievement, idx) => (
+                    <div key={idx} className="achievement-item">
+                      <Award size={14} />
+                      <span>{achievement}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Expertise */}
                 <div className="team-expertise">
-                  {member.featured && (
-                    <>
-                      <span className="expertise-tag">AI & Machine Learning</span>
-                      <span className="expertise-tag">Agricultural Technology</span>
-                      <span className="expertise-tag">Social Entrepreneurship</span>
-                    </>
-                  )}
+                  {member.expertise.map((skill, idx) => (
+                    <span key={idx} className="expertise-tag">{skill}</span>
+                  ))}
                 </div>
               </div>
             </MotionDiv>
@@ -140,20 +171,32 @@ const TeamPhotos = () => {
           transition={{ delay: 0.5, duration: 0.6 }}
         >
           <div className="team-stat-item">
-            <div className="team-stat-number">4+</div>
-            <div className="team-stat-label">Years Experience</div>
+            <div className="team-stat-icon">
+              <Users size={24} />
+            </div>
+            <div className="team-stat-number">4</div>
+            <div className="team-stat-label">Dedicated Team Members</div>
           </div>
           <div className="team-stat-item">
-            <div className="team-stat-number">10+</div>
-            <div className="team-stat-label">Projects Completed</div>
+            <div className="team-stat-icon">
+              <Globe size={24} />
+            </div>
+            <div className="team-stat-number">3+</div>
+            <div className="team-stat-label">Academic Disciplines</div>
           </div>
           <div className="team-stat-item">
-            <div className="team-stat-number">50k+</div>
-            <div className="team-stat-label">Farmers Impacted</div>
+            <div className="team-stat-icon">
+              <Award size={24} />
+            </div>
+            <div className="team-stat-number">100%</div>
+            <div className="team-stat-label">University of Eldoret</div>
           </div>
           <div className="team-stat-item">
-            <div className="team-stat-number">5+</div>
-            <div className="team-stat-label">Countries Reached</div>
+            <div className="team-stat-icon">
+              <Target size={24} />
+            </div>
+            <div className="team-stat-number">AgroShield360</div>
+            <div className="team-stat-label">Innovation Challenge Project</div>
           </div>
         </MotionDiv>
       </div>

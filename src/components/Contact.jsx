@@ -25,7 +25,7 @@ const Contact = () => {
               <Mail size={24} />
               <div>
                 <h3>Email</h3>
-                <p>josephekisaopurongo@gmail.com</p>
+                <p>agroshield9@gmail.com</p>
               </div>
             </div>
             <div className="info-item">
