@@ -6,7 +6,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
 import Solution from './components/Solution';
-import HowItWorks from './components/HowItWorks';
+//import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
 import VisionMission from './components/VisionMission';
 import Impact from './components/Impact';
@@ -25,7 +25,6 @@ function App() {
       <Hero />
       <Problem />
       <Solution />
-      <HowItWorks />
       <Features />
       <VisionMission />
       <Impact />
